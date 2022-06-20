@@ -1,0 +1,106 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: rgb(172, 219, 255);
+}
+
+#box {
+  background-color: white;
+  /* background-image: url(https://bengsfort.github.io/assets/flying-is-hard-character/Player-256x256-v1.png);
+  background-repeat: no-repeat; */
+
+  justify-content: center;
+  display: block;
+  align-items: center;
+  border: 2px solid rgb(93, 153, 188);
+  margin: 10% 25% 0% 25%;
+}
+
+#title {
+  text-align: center;
+  padding-top: 18%;
+  padding-bottom: 10%;
+  font-size: 50px;
+  font-family: "Source Code Pro", monospace;
+  letter-spacing: -1px;
+  font-weight: 500;
+}
+#name {
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  border-style: none;
+  border-bottom: 1px solid #d1d1d1;
+  outline: none;
+  height: 25px;
+  font-size: 20px;
+
+  width: 17%;
+}
+#name:focus + label > span,
+#name:valid + label > span {
+  -webkit-transition: top 0.2s ease, font-size 0.2s ease;
+  transition: top 0.2s ease, font-size 0.2s ease;
+  position: relative;
+  top: -30px;
+  font-size: 17px;
+  color: #62b4dd;
+}
+
+.inputs {
+  border-style: none;
+  border-bottom: 1px solid #d9d9d9;
+  outline: none;
+  height: 25px;
+  font-size: 20px;
+  padding-bottom: 5px;
+  margin-top: 25px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  text-align: center;
+}
+#labelName {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  position: relative;
+  top: -25px;
+  width: 100%;
+  display: block;
+  color: rgb(65, 65, 65);
+}
+
+#button {
+  align-items: center;
+  text-transform: uppercase;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  background-image: linear-gradient(120deg, #a8e2ff, #6194be);
+  color: white;
+  width: 230px;
+  height: 70px;
+  border-style: none;
+  font-size: 18px;
+  text-decoration: none;
+}
+#button:hover {
+  font-size: 19px;
+}
+#bestPlayers {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  color: #62b4dd;
+  font-size: 14px;
+  padding-top: 20px;
+  padding-bottom: 60px;
+}
+#bestPlayers:hover {
+  color: #2f5466;
+}
