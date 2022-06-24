@@ -29,20 +29,23 @@
       heartsDiv.id = "heartsDiv";
       bothDivs.append(heartsDiv);
 
-      const heart1 = document.createElement("img");
+     
+      for (let index = 0; index < heartArray; index++) {
+        const heart1 = document.createElement("img");
       heart1.classList.add("heart");
       heart1.src = "https://data.whicdn.com/images/138547234/original.png";
       heartsDiv.append(heart1);
+      }
 
-      const heart2 = document.createElement("img");
-      heart2.classList.add("heart");
-      heart2.src = "https://data.whicdn.com/images/138547234/original.png";
-      heartsDiv.append(heart2);
+      // const heart2 = document.createElement("img");
+      // heart2.classList.add("heart");
+      // heart2.src = "https://data.whicdn.com/images/138547234/original.png";
+      // heartsDiv.append(heart2);
 
-      const heart3 = document.createElement("img");
-      heart3.classList.add("heart");
-      heart3.src = "https://data.whicdn.com/images/138547234/original.png";
-      heartsDiv.append(heart3);
+      // const heart3 = document.createElement("img");
+      // heart3.classList.add("heart");
+      // heart3.src = "https://data.whicdn.com/images/138547234/original.png";
+      // heartsDiv.append(heart3);
 
       const scoreDiv = document.createElement("div");
       scoreDiv.id = "scoreDiv";
