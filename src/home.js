@@ -20,7 +20,7 @@ enterName.id = "infoOne";
 enterName.innerText = "Enter Your Name";
 label.append(enterName);
 const buttonLink = document.createElement("a");
-buttonLink.href = "./gamePage/game.html";
+buttonLink.href = "gamePage/game.html";
 buttonLink.innerText = "start";
 buttonLink.id = "button";
 

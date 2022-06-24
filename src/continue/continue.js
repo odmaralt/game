@@ -21,7 +21,7 @@ retry.innerText = "Continue";
 div.append(retry);
 const home = document.createElement("a");
 home.id = "home";
-home.href = "../home.html";
+home.href = "../index.html";
 home.innerText = "Return to Home";
 div.append(home);
 
