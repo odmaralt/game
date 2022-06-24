@@ -3,73 +3,81 @@
   padding: 0;
 }
 body {
-  background-color: rgb(172, 219, 255);
+  background-color: #0d3c79;
 }
 
 #box {
-  background-color: white;
+  background-color: #0d3c79;
   justify-content: center;
   display: block;
   align-items: center;
-  border: 2px solid rgb(93, 153, 188);
+  /* border: 2px solid rgb(93, 153, 188); */
   margin: 10% 25% 0% 25%;
 }
 
 #title {
   text-align: center;
-  padding-top: 18%;
-  padding-bottom: 8%;
-  font-size: 50px;
-  font-family: "Source Code Pro", monospace;
+  padding-top: 24%;
+  padding-bottom: 6%;
+  font-size: 52px;
+  font-family: "Press Start 2P", cursive;
   font-weight: 400;
+  color: white;
   letter-spacing: -1px;
   text-transform: uppercase;
 }
 
-#button {
-  align-items: center;
-  text-transform: uppercase;
-  text-align: center;
-  justify-content: center;
+#div {
   display: flex;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 10px;
-  background-image: linear-gradient(120deg, #a8e2ff, #6194be);
-  color: white;
-  width: 200px;
-  height: 70px;
-  border-style: none;
-  font-size: 18px;
-  text-decoration: none;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
 }
 #score {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Press Start 2P", cursive;
   text-align: center;
   position: relative;
   top: -5px;
   width: 100%;
   display: block;
-  color: rgb(65, 65, 65);
+  font-size: 20px;
+  padding-bottom: 10%;
+  color: rgb(255, 255, 255);
 }
 
 #home {
   display: flex;
   margin-bottom: 100px;
-  color: #76bde1;
- font-size: 16px;
+  color: #ffffff;
+  font-family: "Press Start 2P", cursive;
+  font-size: 25px;
   padding-top: 10px;
   justify-content: center;
+  text-decoration: none;
+  margin-left: 10%;
+  text-transform: uppercase;
 }
 
 #button:hover {
-    font-size: 19px;
-  }
-  #home:hover {
-    color: #2f5466;
-  }
-  
-  #retry{
-    color: #ffffff;
-    text-decoration: none;
-  }
+  font-size: 19px;
+}
+#home:hover {
+  color: #181818;
+}
+#retry:hover {
+  color: #181818;
+}
+
+#retry {
+  display: flex;
+  margin-bottom: 100px;
+  color: #ffffff;
+  font-family: "Press Start 2P", cursive;
+  font-size: 25px;
+  padding-top: 10px;
+  justify-content: center;
+  margin-right: 4%;
+  margin-left: 12%;
+  text-decoration: none;
+  text-transform: uppercase;
+}

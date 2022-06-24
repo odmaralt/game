@@ -14,8 +14,278 @@
     />
   </head>
   <body>
-    <div id="container"></div>
+    <div id="header"></div>
+    <canvas width="1800px" height="770px" id="container"></canvas>
+    <script>
+      const heartArray = localStorage.getItem("numberOfLives");
+      const previousScore = JSON.parse(localStorage.getItem("previousScore"));
+      let score = previousScore || 0;
+      const canvas = document.getElementById("container");
+      const header = document.getElementById("header");
+      const bothDivs = document.createElement("div");
+      bothDivs.id = "bothDivs";
 
+      const heartsDiv = document.createElement("div");
+      heartsDiv.id = "heartsDiv";
+      bothDivs.append(heartsDiv);
+
+      const heart1 = document.createElement("img");
+      heart1.classList.add("heart");
+      heart1.src = "https://data.whicdn.com/images/138547234/original.png";
+      heartsDiv.append(heart1);
+
+      const heart2 = document.createElement("img");
+      heart2.classList.add("heart");
+      heart2.src = "https://data.whicdn.com/images/138547234/original.png";
+      heartsDiv.append(heart2);
+
+      const heart3 = document.createElement("img");
+      heart3.classList.add("heart");
+      heart3.src = "https://data.whicdn.com/images/138547234/original.png";
+      heartsDiv.append(heart3);
+
+      const scoreDiv = document.createElement("div");
+      scoreDiv.id = "scoreDiv";
+      bothDivs.append(scoreDiv);
+      header.append(bothDivs);
+      const context = canvas.getContext("2d");
+
+      const instructions = document.createElement("div");
+      instructions.id = "instructions";
+      header.append(instructions);
+
+      const words = document.createElement("p");
+      words.id = "words";
+      words.innerText =
+        "Use left and right arrow keys to move.   Don't touch the obstacles!";
+      setTimeout(() => {
+        words.style.display = "none";
+      }, 4000);
+      instructions.append(words);
+
+      const jumpTo = (numberOfLives) => {
+        numberOfLives--;
+        localStorage.setItem("score", JSON.parse(score));
+        localStorage.setItem("numberOfLives", JSON.stringify(numberOfLives));
+        if (numberOfLives < 3 && numberOfLives >= 1) {
+          const bTag = document.createElement("a");
+          bTag.href = "../continue/continue.html";
+          bTag.click();
+        } else {
+          const aTag = document.createElement("a");
+          aTag.href = "../end/end.html";
+          aTag.click();
+          numberOfLives = 3;
+        }
+      };
+      // width and height of each platform and where platforms start
+      const platformWidth = 230;
+      const platformHeight = 20;
+      const platformStart = canvas.height - 50;
+
+      // player physics
+      const gravity = 0.00000001;
+      const drag = 0.3;
+      const bounceVelocity = -4.5;
+
+      // minimum and maximum vertical space between each platform
+      let minPlatformSpace = 140;
+      let maxPlatformSpace = 170;
+
+      // information about each platform. the first platform starts in the
+      // bottom middle of the screen
+      let platforms = [
+        {
+          x: canvas.width / 2 - platformWidth / 2,
+          y: platformStart,
+        },
+      ];
+
+      // get a random number between the min (inclusive) and max (exclusive)
+      function random(min, max) {
+        return Math.random() * (max - min) + min;
+      }
+
+      // fill the initial screen with platforms
+      let y = platformStart;
+      while (y > 0) {
+        // the next platform can be placed above the previous one with a space
+        // somewhere between the min and max space
+        y -= platformHeight + random(minPlatformSpace, maxPlatformSpace);
+
+        // a platform can be placed anywhere 25px from the left edge of the canvas
+        // and 25px from the right edge of the canvas (taking into account platform
+        // width).
+        // however the first few platforms cannot be placed in the center so
+        // that the player will bounce up and down without going up the screen
+        // until they are ready to move
+        let x;
+        do {
+          x = random(5, canvas.width - 5 - platformWidth);
+        } while (
+          y > canvas.height / 2 &&
+          x > canvas.width / 2 - platformWidth * 1.5 &&
+          x < canvas.width / 2 + platformWidth / 2
+        );
+
+        platforms.push({ x, y });
+      }
+
+      // the doodle jumper
+      const doodle = {
+        width: 40,
+        height: 60,
+        x: canvas.width / 2 - 20,
+        y: platformStart - 60,
+
+        // velocity
+        dx: 0,
+        dy: 0,
+      };
+      // keep track of player direction and actions
+      let playerDir = 0;
+      let keydown = false;
+      let prevDoodleY = doodle.y;
+
+      // game loop
+      function loop() {
+        requestAnimationFrame(loop);
+
+        context.clearRect(0, 0, canvas.width, canvas.height);
+
+        // apply gravity to doodle
+        doodle.dy += gravity;
+
+        // if doodle reaches the middle of the screen, move the platforms down
+        // instead of doodle up to make it look like doodle is going up
+        if (doodle.y < canvas.height / 2 && doodle.dy < 0) {
+          platforms.forEach(function (platform) {
+            platform.y += -doodle.dy;
+          });
+
+          // add more platforms to the top of the screen as doodle moves up
+          while (platforms[platforms.length - 1].y > 0) {
+            platforms.push({
+              x: random(25, canvas.width - 25 - platformWidth),
+              y:
+                platforms[platforms.length - 1].y -
+                (platformHeight + random(minPlatformSpace, maxPlatformSpace)),
+            });
+
+            // add a bit to the min/max platform space as the player goes up
+            minPlatformSpace -= 0.2;
+            maxPlatformSpace -= 0.2;
+
+            // cap max space
+            maxPlatformSpace = Math.min(maxPlatformSpace, canvas.height / 2);
+          }
+          score++;
+        } else {
+          doodle.y += doodle.dy;
+        }
+        scoreDiv.textContent = score;
+        // only apply drag to horizontal movement if key is not pressed
+        if (!keydown) {
+          if (playerDir < 0) {
+            doodle.dx += drag;
+
+            // don't let dx go above 0
+            if (doodle.dx > 0) {
+              doodle.dx = 0;
+              playerDir = 0;
+            }
+          } else if (playerDir > 0) {
+            doodle.dx -= drag;
+
+            if (doodle.dx < 0) {
+              doodle.dx = 0;
+              playerDir = 0;
+            }
+          }
+        }
+
+        doodle.x += doodle.dx;
+
+        // make doodle wrap the screen
+        if (doodle.x + doodle.width < 0) {
+          doodle.x = canvas.width;
+        } else if (doodle.x > canvas.width) {
+          doodle.x = -doodle.width;
+        }
+
+        // draw platforms
+        context.fillStyle = "black";
+        platforms.forEach(function (platform) {
+          context.fillRect(
+            platform.x,
+            platform.y,
+            platformWidth,
+            platformHeight
+          );
+
+          // make doodle jump if it collides with a platform from above
+          if (
+            // doodle is falling
+            doodle.dy > 0 &&
+            // doodle was previous above the platform
+            prevDoodleY + doodle.height <= platform.y &&
+            // doodle collides with platform
+            // (Axis Aligned Bounding Box [AABB] collision check)
+            doodle.x < platform.x + platformWidth &&
+            doodle.x + doodle.width > platform.x &&
+            doodle.y < platform.y + platformHeight &&
+            doodle.y + doodle.height > platform.y
+          ) {
+            // reset doodle position so it's on top of the platform
+            doodle.y = platform.y - doodle.height;
+            doodle.dy = bounceVelocity;
+          }
+
+          if (
+            doodle.x < platform.x + platformWidth &&
+            doodle.x + doodle.width > platform.x &&
+            doodle.y < platform.y + platformHeight &&
+            doodle.y + doodle.height > platform.y
+          ) {
+            jumpTo(heartArray);
+          }
+        });
+
+        // draw doodle
+        context.fillStyle = "blue";
+        context.fillRect(doodle.x, doodle.y, doodle.width, doodle.height);
+
+        prevDoodleY = doodle.y;
+
+        // remove any platforms that have gone offscreen
+        platforms = platforms.filter(function (platform) {
+          return platform.y < canvas.height;
+        });
+      }
+
+      // listen to keyboard events to move doodle
+      document.addEventListener("keydown", function (e) {
+        // left arrow key
+        if (e.which === 37) {
+          keydown = true;
+          playerDir = -1;
+          doodle.dx = -7;
+        }
+        // right arrow key
+        else if (e.which === 39) {
+          keydown = true;
+          playerDir = 1;
+          doodle.dx = 7;
+        }
+      });
+
+      document.addEventListener("keyup", function (e) {
+        keydown = false;
+      });
+
+      // start the game
+      requestAnimationFrame(loop);
+    </script>
     <script src="game.js"></script>
   </body>
 </html>
