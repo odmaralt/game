@@ -21,18 +21,21 @@ body {
 
 #header {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   padding: 46px 40px 40px 40px;
   text-decoration: none;
 }
 #score {
-  padding-right: 8%;
   font-family: "Source Code Pro", monospace;
   font-size: 35px;
   font-weight: 500;
 }
 #name {
-  padding-left: 8.5%;
+  font-family: "Source Code Pro", monospace;
+  font-size: 35px;
+  font-weight: 500;
+}
+#mode {
   font-family: "Source Code Pro", monospace;
   font-size: 35px;
   font-weight: 500;
@@ -41,13 +44,13 @@ body {
   font-family: "Source Code Pro", monospace;
   font-size: 35px;
   font-weight: 500;
-  padding-left: 1%;
 }
 
 #title {
   text-align: center;
   font-family: "Press Start 2P", cursive;
   font-size: 42px;
+  color: white;
 }
 /* #top{
     display: flex;
@@ -55,14 +58,17 @@ body {
 #img {
   padding-left: 3%;
   padding-top: 2%;
+  -webkit-filter: invert(100%);
 }
-
+#img:hover {
+  width: 52px;
+  padding-top: 1.9%;
+}
 #allPlayers {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   font-family: "Source Code Pro", monospace;
   font-size: 25px;
   padding-right: 11%;
   padding-left: 10%;
-  padding-bottom: 1%;
 }

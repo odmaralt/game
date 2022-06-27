@@ -9,7 +9,7 @@ body {
 }
 
 #boxOne {
-  margin-left: 30%;
+  margin-left: 28%;
   padding: 50px;
   font-size: 30px;
   color: white;
@@ -27,20 +27,20 @@ body {
   text-decoration: none;
 }
 #boxTwo {
-  margin-left: 30%;
+  margin-left: 28%;
   padding: 50px;
   color: white;
   font-size: 30px;
 }
 #boxThree {
-  margin-left: 30%;
+  margin-left: 28%;
   padding: 50px;
   color: white;
   font-size: 30px;
 }
 #gameMode {
   padding: 50px;
-  margin: 5% 0% 1% 30%;
+  margin: 3% 0% 0% 28%;
   font-size: 34px;
   color: white;
 }
@@ -54,11 +54,11 @@ body {
   margin-top: 1.9%;
 }
 #boxOne:hover {
-  font-size: 33px;
+  font-size: 32px;
 }
 #boxTwo:hover {
-  font-size: 33px;
+  font-size: 32px;
 }
 #boxThree:hover {
-  font-size: 33px;
+  font-size: 32px;
 }
