@@ -80,7 +80,7 @@ body {
   text-transform: uppercase;
   text-align: center;
   justify-content: center;
-  display:inline;
+  display: inline;
   font-family: "Press Start 2P", cursive;
   color: rgb(0, 0, 0);
   border-style: none;
@@ -90,14 +90,13 @@ body {
   text-decoration: none;
   text-transform: uppercase;
   color: #478eda;
-
 }
 #button:hover {
   color: #000000;
 }
 #bestPlayers {
   text-align: center;
-  display:inline;
+  display: inline;
   justify-content: center;
   font-family: "Press Start 2P", cursive;
   text-decoration: none;
@@ -107,7 +106,6 @@ body {
   padding-bottom: 60px;
   text-transform: uppercase;
   letter-spacing: -0.1px;
-
 }
 #bestPlayers:hover {
   color: #000000;
@@ -119,8 +117,9 @@ body {
 }
 #div {
   display: flex;
-  /* text-align: center;
-  align-items: center;
-  justify-content: center;
-  margin-top: 20px; */
+}
+@media only screen and (max-width: 850px) {
+  body {
+    display: none;
+  }
 }

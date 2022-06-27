@@ -15,7 +15,7 @@ div.id = "div";
 box.append(div);
 const retry = document.createElement("a");
 retry.id = "retry";
-retry.href = "../gamePage/game.html";
+retry.href = "../EasyMode/easy.html";
 retry.innerText = "Retry";
 div.append(retry);
 const home = document.createElement("a");

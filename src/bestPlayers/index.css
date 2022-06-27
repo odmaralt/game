@@ -3,17 +3,12 @@
   padding: 0;
 }
 body {
-  background-color: #a6d1ff;
-  background-image: url(https://media4.giphy.com/media/HQp9pMIlKV6zQiBlBi/giphy.gif?cid=6c09b9523qwubf9xua41pdubjewywu6j91m0e3ovb0n15kf0&rid=giphy.gif&ct=s);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  background-color: #98caff;
 }
 
 #box {
   background-color: white;
   overflow-y: scroll;
-
   justify-content: center;
   display: block;
   align-items: center;
@@ -28,32 +23,31 @@ body {
   display: flex;
   justify-content: space-between;
   padding: 46px 40px 40px 40px;
-  text-decoration: underline;
+  text-decoration: none;
 }
 #score {
   padding-right: 8%;
   font-family: "Source Code Pro", monospace;
-  font-size: 36px;
+  font-size: 35px;
   font-weight: 500;
 }
 #name {
   padding-left: 8.5%;
   font-family: "Source Code Pro", monospace;
-  font-size: 36px;
+  font-size: 35px;
   font-weight: 500;
 }
 #date {
   font-family: "Source Code Pro", monospace;
-  font-size: 36px;
+  font-size: 35px;
   font-weight: 500;
   padding-left: 1%;
 }
 
 #title {
   text-align: center;
-  font-family: "Source Code Pro", monospace;
-  letter-spacing: -2px;
-  font-size: 45px;
+  font-family: "Press Start 2P", cursive;
+  font-size: 42px;
 }
 /* #top{
     display: flex;

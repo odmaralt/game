@@ -1,9 +1,10 @@
 const box = document.getElementById("box");
+const title = document.createElement("h1");
 const numberOfLives = localStorage.getItem("numberOfLives");
 const previousScore = JSON.parse(localStorage.getItem("previousScore"));
-const title = document.createElement("h1");
+
 title.id = "title";
-title.innerText = "GAME OVER";
+title.innerText = "LIVES LEFT:" + numberOfLives || "";
 box.append(title);
 
 const scoreBoard = document.createElement("p");
@@ -15,8 +16,8 @@ div.id = "div";
 box.append(div);
 const retry = document.createElement("a");
 retry.id = "retry";
-retry.href = "../gamePage/game.html";
-retry.innerText = "Retry";
+retry.href = "../EasyMode/easy.html";
+retry.innerText = "Continue";
 div.append(retry);
 const home = document.createElement("a");
 home.id = "home";
@@ -28,25 +29,25 @@ document.addEventListener("keypress", (e) => {
   if (e.key === "Enter") {
     e.preventDefault();
     retry.click();
-    numberOfLives = 3;
-    localStorage.setItem("numberOfLives", JSON.stringify(numberOfLives));
   }
 });
 
 const score = localStorage.getItem("score");
+
 if (score !== null) {
   scoreBoard.textContent = "Score:" + score;
+  localStorage.setItem("previousScore", JSON.stringify(score));
 }
 
 home.addEventListener("click", (numberOfLives) => {
   numberOfLives = 3;
-
   localStorage.setItem("numberOfLives", JSON.stringify(numberOfLives));
   localStorage.removeItem("previousScore");
 });
-
-retry.addEventListener("click", (numberOfLives) => {
-  numberOfLives = 3;
-  localStorage.removeItem("previousScore");
-  localStorage.setItem("numberOfLives", JSON.stringify(numberOfLives));
-});
+// retry.addEventListener("click", (numberOfLives) => {
+//   if (numberOfLives = 3) {
+//     numberOfLives =
+//   }
+//    numberOfLives = 2;
+//   localStorage.setItem("numberOfLives", JSON.stringify(numberOfLives));
+// });

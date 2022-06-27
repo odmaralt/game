@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hover</title>
-    <link rel="stylesheet" href="game.css" />
+    <link rel="stylesheet" href="hard.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -60,29 +60,29 @@
         localStorage.setItem("numberOfLives", JSON.stringify(numberOfLives));
         if (numberOfLives < 3 && numberOfLives >= 1) {
           const bTag = document.createElement("a");
-          bTag.href = "../continue/continue.html";
+          bTag.href = "../continue/contHard.html";
           bTag.click();
         } else {
           const aTag = document.createElement("a");
-          aTag.href = "../end/end.html";
+          aTag.href = "../end/endh.html";
           aTag.click();
           numberOfLives = 3;
         }
       };
 
       // width and height of each platform and where platforms start
-      const platformWidth = 260;
+      const platformWidth = 280;
       const platformHeight = 20;
       const platformStart = canvas.height - 50;
 
       // player physics
       const gravity = 0.00000001;
       const drag = 0.3;
-      const bounceVelocity = -5;
+      const bounceVelocity = -8.5;
 
       // minimum and maximum vertical space between each platform
-      let minPlatformSpace = 140;
-      let maxPlatformSpace = 170;
+      let minPlatformSpace = 130;
+      let maxPlatformSpace = 150;
 
       // information about each platform. the first platform starts in the
       // bottom middle of the screen
@@ -165,8 +165,8 @@
             });
 
             // add a bit to the min/max platform space as the player goes up
-            minPlatformSpace -= 0.2;
-            maxPlatformSpace -= 0.2;
+            minPlatformSpace -= 0.5;
+            maxPlatformSpace -= 0.5;
 
             // cap max space
             maxPlatformSpace = Math.min(maxPlatformSpace, canvas.height / 2);
@@ -261,13 +261,13 @@
         if (e.which === 37) {
           keydown = true;
           playerDir = -1;
-          doodle.dx = -7;
+          doodle.dx = -11;
         }
         // right arrow key
         else if (e.which === 39) {
           keydown = true;
           playerDir = 1;
-          doodle.dx = 7;
+          doodle.dx = 11;
         }
       });
 
@@ -302,6 +302,6 @@
       const analytics = getAnalytics(app);
     </script>
 
-    <script src="game.js"></script>
+    <script src="hard.js"></script>
   </body>
 </html>

@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Press Start 2P", cursive;
+  text-transform: uppercase;
+}
+body {
+  background-color: #499cf5;
+}
+
+#boxOne {
+  margin-left: 30%;
+  padding: 50px;
+  font-size: 30px;
+  color: white;
+}
+#boxOne a {
+  text-decoration: none;
+  color: white;
+}
+#boxTwo a {
+  text-decoration: none;
+  color: white;
+}
+#boxThree a {
+  color: white;
+  text-decoration: none;
+}
+#boxTwo {
+  margin-left: 30%;
+  padding: 50px;
+  color: white;
+  font-size: 30px;
+}
+#boxThree {
+  margin-left: 30%;
+  padding: 50px;
+  color: white;
+  font-size: 30px;
+}
+#gameMode {
+  padding: 50px;
+  margin: 5% 0% 1% 30%;
+  font-size: 34px;
+  color: white;
+}
+#img {
+  margin-left: 3%;
+  margin-top: 2%;
+  -webkit-filter: invert(100%);
+}
+#img:hover {
+  width: 52px;
+  margin-top: 1.9%;
+}
+#boxOne:hover {
+  font-size: 33px;
+}
+#boxTwo:hover {
+  font-size: 33px;
+}
+#boxThree:hover {
+  font-size: 33px;
+}
