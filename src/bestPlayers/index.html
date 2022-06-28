@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Best Players</title>
+    <title>Best Scores</title>
     <link rel="stylesheet" href="index.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -27,29 +27,64 @@
     />
   </head>
   <body>
-    <div id="top">
-      <a href="../index.html">
-        <img
-          id="img"
-          src="https://img.icons8.com/ios-filled/50/undefined/left2.png"
-        />
-      </a>
-      <h1 id="title">Best Scores</h1>
-    </div>
-    <div id="box">
-      <div id="header">
-        <h1 id="name">Name</h1>
-        <h1 id="date">Date</h1>
-        <h1 id="mode">Mode</h1>
-        <h1 id="score">Score</h1>
-      </div>
-      <div id="allPlayers">
-        <p class="name"></p>
-        <p>06-19-22</p>
-        <p>Easy</p>
-        <p>10000</p>
-      </div>
-    </div>
+    <div id="boxes"></div>
     <script src="index.js"></script>
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.4/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.8.4/firebase-analytics.js";
+      import {
+        collection,
+        getDocs,
+        getFirestore,
+      } from "https://www.gstatic.com/firebasejs/9.8.4/firebase-firestore.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyCKRpmlC3y1nCLJZzl5N0w1G6ADnkUQ10A",
+        authDomain: "game-346a1.firebaseapp.com",
+        projectId: "game-346a1",
+        storageBucket: "game-346a1.appspot.com",
+        messagingSenderId: "602531524938",
+        appId: "1:602531524938:web:3e5e8b32e2ee665ced91b3",
+        measurementId: "G-ZE42HGYTD3",
+      };
+      const app = initializeApp(firebaseConfig);
+      const db = getFirestore(app);
+      let players = [];
+      const analytics = getAnalytics(app);
+      const querySnapshot = await getDocs(collection(db, "players"));
+      querySnapshot.forEach((doc) => {
+        // console.log(doc.id, " => ", doc.data());
+        const player = doc.data();
+        players.push(player);
+      });
+
+      players
+        .sort((a, b) => parseFloat(b.score) - parseFloat(a.score))
+        .map((player) => {
+          const nameParagraph = document.createElement("p");
+          let play = player.name;
+          play = play.slice(0, -1);
+          play = play.slice(1);
+          nameParagraph.textContent = play;
+
+          nameParagraph.style.paddingBottom = "30px";
+          allNames.append(nameParagraph);
+          const scoreParagraph = document.createElement("p");
+          scoreParagraph.style.paddingBottom = "30px";
+          scoreParagraph.textContent = player.score;
+          allScores.append(scoreParagraph);
+
+          const modeParagraph = document.createElement("p");
+          modeParagraph.style.paddingBottom = "30px";
+
+          modeParagraph.textContent = player.mode;
+          allModes.append(modeParagraph);
+          const dateParagraph = document.createElement("p");
+          dateParagraph.textContent = player.date;
+          dateParagraph.style.paddingBottom = "30px";
+
+          allDates.append(dateParagraph);
+        });
+    </script>
   </body>
 </html>

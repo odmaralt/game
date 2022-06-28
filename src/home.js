@@ -41,7 +41,7 @@ both.append(buttonLink);
 const bestPlayers = document.createElement("a");
 bestPlayers.href = "bestPlayers/index.html";
 bestPlayers.id = "bestPlayers";
-bestPlayers.innerText = "Best Players";
+bestPlayers.innerText = "Best Scores";
 both.append(bestPlayers);
 
 document.addEventListener("keypress", (e) => {
