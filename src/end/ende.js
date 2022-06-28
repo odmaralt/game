@@ -32,7 +32,11 @@ document.addEventListener("keypress", (e) => {
     localStorage.setItem("numberOfLives", JSON.stringify(numberOfLives));
   }
 });
-
+let today = new Date();
+let dd = String(today.getDate()).padStart(2, "0");
+let mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
+let yyyy = today.getFullYear();
+today = mm + "/" + dd + "/" + yyyy;
 const score = localStorage.getItem("score");
 if (score !== null) {
   scoreBoard.textContent = "Score:" + score;
@@ -40,13 +44,6 @@ if (score !== null) {
 
 home.addEventListener("click", (numberOfLives) => {
   numberOfLives = 3;
-
   localStorage.setItem("numberOfLives", JSON.stringify(numberOfLives));
   localStorage.removeItem("previousScore");
-});
-
-retry.addEventListener("click", (numberOfLives) => {
-  numberOfLives = 3;
-  localStorage.removeItem("previousScore");
-  localStorage.setItem("numberOfLives", JSON.stringify(numberOfLives));
 });

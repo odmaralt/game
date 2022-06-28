@@ -20,9 +20,18 @@ enterName.id = "infoOne";
 enterName.innerText = "Enter Your Name";
 label.append(enterName);
 const buttonLink = document.createElement("a");
-buttonLink.href = "./selectDifficulty/select.html";
+
 buttonLink.innerText = "start";
 buttonLink.id = "button";
+
+buttonLink.addEventListener("click", () => {
+  if (input.value === "") {
+    buttonLink.href = "";
+    alert("Enter your name.");
+  } else if (input.value !== "") {
+    buttonLink.href = "selectDifficulty/select.html";
+  }
+});
 
 box.append(buttonLink);
 
@@ -45,4 +54,6 @@ buttonLink.addEventListener("click", () => {
   numberOfLives = 3;
   localStorage.setItem("numberOfLives", JSON.stringify(numberOfLives));
   localStorage.removeItem("previousScore");
+  const playerName = input.value;
+  localStorage.setItem("playerName", JSON.stringify(playerName));
 });

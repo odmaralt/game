@@ -37,16 +37,14 @@ const score = localStorage.getItem("score");
 if (score !== null) {
   scoreBoard.textContent = "Score:" + score;
 }
-
+let today = new Date();
+let dd = String(today.getDate()).padStart(2, "0");
+let mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
+let yyyy = today.getFullYear();
+today = mm + "/" + dd + "/" + yyyy;
 home.addEventListener("click", (numberOfLives) => {
   numberOfLives = 3;
 
   localStorage.setItem("numberOfLives", JSON.stringify(numberOfLives));
   localStorage.removeItem("previousScore");
-});
-
-retry.addEventListener("click", (numberOfLives) => {
-  numberOfLives = 3;
-  localStorage.removeItem("previousScore");
-  localStorage.setItem("numberOfLives", JSON.stringify(numberOfLives));
 });

@@ -17,5 +17,61 @@
   <body>
     <div id="box"></div>
     <script src="ende.js"></script>
+
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-analytics.js";
+      import {
+        getAuth,
+        createUserWithEmailAndPassword,
+      } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-auth.js";
+      // import { firestore } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-firestore.js";
+      import {
+        getDatabase,
+        set,
+        ref,
+      } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-database.js";
+      import {
+        getFirestore,
+        collection,
+        doc,
+        addDoc,
+        setDoc,
+      } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-firestore.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyCKRpmlC3y1nCLJZzl5N0w1G6ADnkUQ10A",
+        authDomain: "game-346a1.firebaseapp.com",
+        projectId: "game-346a1",
+        storageBucket: "game-346a1.appspot.com",
+        messagingSenderId: "602531524938",
+        appId: "1:602531524938:web:3e5e8b32e2ee665ced91b3",
+        measurementId: "G-ZE42HGYTD3",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+      const auth = getAuth();
+      const db = getFirestore(app);
+
+      const playerCollectionRef = collection(db, "players");
+
+      retry.addEventListener("click", async (numberOfLives) => {
+        numberOfLives = 3;
+        localStorage.removeItem("previousScore");
+        localStorage.setItem("numberOfLives", JSON.stringify(numberOfLives));
+        await setDoc(doc(playerCollectionRef), {
+          name: playerName,
+          score: score,
+          date: today,
+          mode: "Easy",
+        });
+      });
+    </script>
   </body>
 </html>

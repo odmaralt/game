@@ -24,7 +24,7 @@ body {
   text-align: center;
   padding-top: 18%;
   padding-bottom: 10%;
-  font-size: 50px;
+  font-size: 47px;
   font-family: "Press Start 2P", cursive;
   letter-spacing: -2px;
   color: #478eda;
@@ -38,8 +38,8 @@ body {
   border-bottom: 1px solid #d1d1d1;
   outline: none;
   height: 25px;
-  font-size: 20px;
-  width: 24%;
+  font-size: 18px;
+  width: 214px;
 }
 #name:focus + label > span,
 #name:valid + label > span {
@@ -56,7 +56,7 @@ body {
   border-bottom: 1px solid #d9d9d9;
   outline: none;
   height: 25px;
-  font-size: 20px;
+  font-size: 18px;
   padding-bottom: 5px;
   margin-top: 25px;
   align-items: center;
@@ -84,7 +84,7 @@ body {
   font-family: "Press Start 2P", cursive;
   color: rgb(0, 0, 0);
   border-style: none;
-  font-size: 22px;
+  font-size: 19px;
   padding-left: 20%;
   padding-right: 13%;
   text-decoration: none;
@@ -101,7 +101,7 @@ body {
   font-family: "Press Start 2P", cursive;
   text-decoration: none;
   color: #478eda;
-  font-size: 22px;
+  font-size: 19px;
   padding-top: 20px;
   padding-bottom: 60px;
   text-transform: uppercase;
@@ -112,7 +112,7 @@ body {
 }
 #infoOne {
   font-family: "Press Start 2P", cursive;
-  font-size: 14px;
+  font-size: 12px;
   letter-spacing: -0.6px;
 }
 #div {
