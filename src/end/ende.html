@@ -60,17 +60,42 @@
       const db = getFirestore(app);
 
       const playerCollectionRef = collection(db, "players");
-
       retry.addEventListener("click", async (numberOfLives) => {
-        numberOfLives = 3;
-        localStorage.removeItem("previousScore");
-        localStorage.setItem("numberOfLives", JSON.stringify(numberOfLives));
         await setDoc(doc(playerCollectionRef), {
           name: playerName,
           score: score,
           date: today,
           mode: "Easy",
-        });
+        })
+          .then(() => {
+            numberOfLives = 3;
+            localStorage.setItem(
+              "numberOfLives",
+              JSON.stringify(numberOfLives)
+            );
+            localStorage.removeItem("previousScore");
+            window.location.href = "../EasyMode/easy.html";
+          })
+          .catch((err) => console.log(err));
+      });
+
+      home.addEventListener("click", async (numberOfLives) => {
+        await setDoc(doc(playerCollectionRef), {
+          name: playerName,
+          score: score,
+          date: today,
+          mode: "Easy",
+        })
+          .then(() => {
+            numberOfLives = 3;
+            localStorage.setItem(
+              "numberOfLives",
+              JSON.stringify(numberOfLives)
+            );
+            localStorage.removeItem("previousScore");
+            window.location.href = "../index.html";
+          })
+          .catch((err) => console.log(err));
       });
     </script>
   </body>

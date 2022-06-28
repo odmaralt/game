@@ -19,6 +19,9 @@ const enterName = document.createElement("span");
 enterName.id = "infoOne";
 enterName.innerText = "Enter Your Name";
 label.append(enterName);
+const both = document.createElement("div");
+both.id = "both";
+box.append(both);
 const buttonLink = document.createElement("a");
 
 buttonLink.innerText = "start";
@@ -33,13 +36,13 @@ buttonLink.addEventListener("click", () => {
   }
 });
 
-box.append(buttonLink);
+both.append(buttonLink);
 
 const bestPlayers = document.createElement("a");
 bestPlayers.href = "bestPlayers/index.html";
 bestPlayers.id = "bestPlayers";
 bestPlayers.innerText = "Best Players";
-box.append(bestPlayers);
+both.append(bestPlayers);
 
 document.addEventListener("keypress", (e) => {
   if (e.key === "Enter") {

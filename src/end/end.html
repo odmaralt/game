@@ -61,27 +61,43 @@
       const playerCollectionRef = collection(db, "players");
 
       retry.addEventListener("click", async (numberOfLives) => {
-        numberOfLives = 3;
-        localStorage.removeItem("previousScore");
-        localStorage.setItem("numberOfLives", JSON.stringify(numberOfLives));
         await setDoc(doc(playerCollectionRef), {
           name: playerName,
           score: score,
           date: today,
           mode: "Normal",
-        });
+        })
+          .then(() => {
+            numberOfLives = 3;
+            console.log("success");
+            localStorage.removeItem("previousScore");
+            localStorage.setItem(
+              "numberOfLives",
+              JSON.stringify(numberOfLives)
+            );
+            window.location.href = "../gamePage/game.html";
+          })
+          .catch((err) => console.log(err));
       });
-      // home.addEventListener("click", async (numberOfLives) => {
-      //   numberOfLives = 3;
-      //   localStorage.setItem("numberOfLives", JSON.stringify(numberOfLives));
-      //   localStorage.removeItem("previousScore");
-      //   await setDoc(doc(playerCollectionRef), {
-      //     name: playerName,
-      //     score: score,
-      //     date: today,
-      //     mode: "Normal",
-      //   });
-      // });
+
+      home.addEventListener("click", async (numberOfLives) => {
+        await setDoc(doc(playerCollectionRef), {
+          name: playerName,
+          score: score,
+          date: today,
+          mode: "Normal",
+        })
+          .then(() => {
+            numberOfLives = 3;
+            localStorage.setItem(
+              "numberOfLives",
+              JSON.stringify(numberOfLives)
+            );
+            localStorage.removeItem("previousScore");
+            window.location.href = "../index.html";
+          })
+          .catch((err) => console.log(err));
+      });
     </script>
   </body>
 </html>

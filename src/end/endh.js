@@ -15,21 +15,17 @@ div.id = "div";
 box.append(div);
 const retry = document.createElement("a");
 retry.id = "retry";
-retry.href = "../HardMode/hard.html";
 retry.innerText = "Retry";
 div.append(retry);
 const home = document.createElement("a");
 home.id = "home";
-home.href = "../index.html";
 home.innerText = "Return to Home";
 div.append(home);
 
-document.addEventListener("keypress", (e) => {
+document.addEventListener("keypress", async (e) => {
   if (e.key === "Enter") {
     e.preventDefault();
-    retry.click();
-    numberOfLives = 3;
-    localStorage.setItem("numberOfLives", JSON.stringify(numberOfLives));
+    await retry.click();
   }
 });
 
@@ -42,9 +38,4 @@ let dd = String(today.getDate()).padStart(2, "0");
 let mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
 let yyyy = today.getFullYear();
 today = mm + "/" + dd + "/" + yyyy;
-home.addEventListener("click", (numberOfLives) => {
-  numberOfLives = 3;
-
-  localStorage.setItem("numberOfLives", JSON.stringify(numberOfLives));
-  localStorage.removeItem("previousScore");
-});
+const playerName = localStorage.getItem("playerName");

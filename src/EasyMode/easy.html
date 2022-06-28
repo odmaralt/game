@@ -78,7 +78,7 @@
       // player physics
       const gravity = 0.00000001;
       const drag = 0.3;
-      const bounceVelocity = -3.5;
+      const bounceVelocity = -2;
 
       // minimum and maximum vertical space between each platform
       let minPlatformSpace = 165;
@@ -260,14 +260,14 @@
         // left arrow key
         if (e.which === 37) {
           keydown = true;
-          playerDir = -5;
-          doodle.dx = -9;
+          playerDir = -2;
+          doodle.dx = -5;
         }
         // right arrow key
         else if (e.which === 39) {
           keydown = true;
-          playerDir = 5;
-          doodle.dx = 9;
+          playerDir = 2;
+          doodle.dx = 5;
         }
       });
 
