@@ -5,8 +5,7 @@
   text-transform: uppercase;
 }
 body {
-  background-color:#478eda;
-  ;
+  background-color: #478eda;
 }
 
 #boxOne {
@@ -14,21 +13,26 @@ body {
   padding: 50px;
   font-size: 30px;
   color: white;
+  display: flex;
 }
 #boxOne a {
   text-decoration: none;
   color: white;
+  padding-left: 4px;
 }
 #boxTwo a {
   text-decoration: none;
   color: white;
+  padding-left: 4px;
 }
 #boxThree a {
   color: white;
   text-decoration: none;
+  padding-left: 4px;
 }
 #boxTwo {
   margin-left: 28%;
+  display: flex;
   padding: 50px;
   color: white;
   font-size: 30px;
@@ -36,6 +40,7 @@ body {
 #boxThree {
   margin-left: 28%;
   padding: 50px;
+  display: flex;
   color: white;
   font-size: 30px;
 }
@@ -54,12 +59,12 @@ body {
   width: 52px;
   margin-top: 1.9%;
 }
-#boxOne:hover {
-  font-size: 32px;
+#arrow1{
+  display: flex;
 }
-#boxTwo:hover {
-  font-size: 32px;
+#arrow2{
+  display: none;
 }
-#boxThree:hover {
-  font-size: 32px;
+#arrow3{
+  display: none;
 }

@@ -16,8 +16,8 @@ body {
   display: block;
   align-items: center;
   border: 2px solid rgb(111, 176, 251);
-  margin: 16% 25% 0% 25%;
-  height: 50vh;
+  margin: 15% 25% 0% 25%;
+  height: 52vh;
 }
 
 #both {
@@ -92,6 +92,7 @@ body {
   text-decoration: none;
   text-transform: uppercase;
   color: #478eda;
+  margin-left: 6%;
 }
 #button:hover {
   color: #000000;
