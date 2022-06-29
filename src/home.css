@@ -17,7 +17,7 @@ body {
   align-items: center;
   border: 2px solid rgb(111, 176, 251);
   margin: 16% 25% 0% 25%;
-  height: 60vh;
+  height: 50vh;
 }
 
 #both {
@@ -27,7 +27,7 @@ body {
 #title {
   text-align: center;
   padding-top: 18%;
-  padding-bottom: 10%;
+  padding-bottom: 12%;
   font-size: 47px;
   font-family: "Press Start 2P", cursive;
   letter-spacing: -2px;
@@ -42,8 +42,9 @@ body {
   border-bottom: 1px solid #d1d1d1;
   outline: none;
   height: 25px;
-  font-size: 18px;
-  width: 214px;
+  font-size: 13px;
+  width: 180px;
+  font-family: "Press Start 2P", cursive;
 }
 #name:focus + label > span,
 #name:valid + label > span {
@@ -61,7 +62,6 @@ body {
   outline: none;
   height: 25px;
   font-size: 18px;
-  padding-bottom: 5px;
   margin-top: 25px;
   align-items: center;
   justify-content: center;

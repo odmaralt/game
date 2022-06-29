@@ -12,12 +12,12 @@ body {
   display: block;
   align-items: center;
   /* border: 2px solid rgb(93, 153, 188); */
-  margin: 4% 25% 0% 18%;
+  margin: 10% 25% 0% 25%;
 }
 
 #title {
   text-align: center;
-  padding-top: 24%;
+  padding-top: 25%;
   padding-bottom: 6%;
   font-size: 50px;
   font-family: "Press Start 2P", cursive;

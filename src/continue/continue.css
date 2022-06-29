@@ -16,7 +16,7 @@
   
   #title {
     text-align: center;
-    padding-top: 24%;
+    padding-top: 25%;
     padding-bottom: 6%;
     font-size: 52px;
     font-family: "Press Start 2P", cursive;
@@ -30,7 +30,7 @@
     display: flex;
     text-align: center;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
   }
   #score {
     font-family: "Press Start 2P", cursive;
@@ -40,20 +40,15 @@
     width: 100%;
     display: block;
     font-size: 20px;
-    padding-bottom: 10%;
+    padding-bottom: 12%;
     color: rgb(255, 255, 255);
   }
   
   #home {
-    display: flex;
-    margin-bottom: 100px;
     color: #ffffff;
     font-family: "Press Start 2P", cursive;
     font-size: 25px;
-    padding-top: 10px;
-    justify-content: center;
     text-decoration: none;
-    margin-left: 10%;
     text-transform: uppercase;
   }
   
@@ -68,15 +63,9 @@
   }
   
   #retry {
-    display: flex;
-    margin-bottom: 100px;
     color: #ffffff;
     font-family: "Press Start 2P", cursive;
     font-size: 25px;
-    padding-top: 10px;
-    justify-content: center;
-    margin-right: 4%;
-    margin-left: 12%;
     text-decoration: none;
     text-transform: uppercase;
   }
