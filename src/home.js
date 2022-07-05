@@ -28,6 +28,7 @@ buttonLink.innerText = "start";
 buttonLink.id = "button";
 
 buttonLink.addEventListener("click", () => {
+  audio.play();
   if (input.value === "") {
     buttonLink.href = "";
     alert("Enter your name.");
@@ -35,7 +36,9 @@ buttonLink.addEventListener("click", () => {
     buttonLink.href = "selectDifficulty/select.html";
   }
 });
-
+let audio = new Audio(
+  "http://codeskulptor-demos.commondatastorage.googleapis.com/pang/pop.mp3"
+);
 both.append(buttonLink);
 
 const bestPlayers = document.createElement("a");
@@ -46,6 +49,8 @@ both.append(bestPlayers);
 
 document.addEventListener("keypress", (e) => {
   if (e.key === "Enter") {
+    audio.play();
+
     e.preventDefault();
     buttonLink.click();
   }
@@ -54,6 +59,7 @@ const previousScore = JSON.parse(localStorage.getItem("previousScore"));
 
 buttonLink.addEventListener("click", () => {
   let score = 0;
+  audio.play();
   numberOfLives = 3;
   localStorage.setItem("numberOfLives", JSON.stringify(numberOfLives));
   localStorage.removeItem("previousScore");

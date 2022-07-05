@@ -64,7 +64,9 @@ hard.addEventListener("click", () => {
   localStorage.removeItem("previousScore");
 });
 localStorage.getItem("playerName");
-
+let audio = new Audio(
+  "http://codeskulptor-demos.commondatastorage.googleapis.com/pang/pop.mp3"
+);
 document.addEventListener("keydown", function (e) {
   if (
     38 == e.keyCode &&
@@ -72,30 +74,37 @@ document.addEventListener("keydown", function (e) {
     arrow2.style.display === "none" &&
     arrow3.style.display === "none"
   ) {
+    audio.play();
     arrow1.style.display = "none";
     arrow3.style.display = "flex";
   } else if (38 == e.keyCode && arrow2.style.display === "flex") {
+    audio.play();
+
     arrow2.style.display = "none";
     arrow1.style.display = "flex";
   } else if (38 == e.keyCode && arrow3.style.display === "flex") {
+    audio.play();
+
     arrow2.style.display = "flex";
     arrow3.style.display = "none";
   } else if (40 == e.keyCode && arrow2.style.display === "flex") {
+    audio.play();
+
     arrow2.style.display = "none";
     arrow3.style.display = "flex";
   } else if (40 == e.keyCode && arrow3.style.display === "flex") {
+    audio.play();
+
     arrow2.style.display = "none";
     arrow3.style.display = "none";
     arrow1.style.display = "flex";
   } else if (40 == e.keyCode) {
+    audio.play();
+
     arrow1.style.display = "none";
     arrow2.style.display = "flex";
   }
-  // else if (e.which === 38) {
-
-  // }
 });
-
 document.addEventListener("keypress", (e) => {
   if (arrow1.style.display !== "none") {
     e.preventDefault();

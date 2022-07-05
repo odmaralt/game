@@ -24,7 +24,6 @@ home.id = "home";
 home.href = "../index.html";
 home.innerText = "Return to Home";
 div.append(home);
-
 document.addEventListener("keypress", (e) => {
   if (e.key === "Enter") {
     e.preventDefault();
