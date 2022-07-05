@@ -37,8 +37,8 @@ if (score !== null) {
   scoreBoard.textContent = "Score:" + score;
   localStorage.setItem("previousScore", JSON.stringify(score));
 }
-
 home.addEventListener("click", (numberOfLives) => {
+ 
   numberOfLives = 3;
   localStorage.setItem("numberOfLives", JSON.stringify(numberOfLives));
   localStorage.removeItem("previousScore");

@@ -68,3 +68,6 @@ all.append(allDates);
 // const date1 = document.createElement("p")
 // date1.id="date1"
 // allPlayers.append(date1)
+let backgroundAudio = new Audio("../../Bicycle.mp3");
+backgroundAudio.loop = true;
+backgroundAudio.play();
