@@ -3,8 +3,16 @@ const numberOfLives = localStorage.getItem("numberOfLives");
 const previousScore = JSON.parse(localStorage.getItem("previousScore"));
 const title = document.createElement("h1");
 title.id = "title";
-title.innerText = "GAME OVER";
 box.append(title);
+
+const game = document.createElement("span");
+game.innerText = "GAME ";
+game.classList.add("words");
+const over = document.createElement("span");
+over.innerText = " OVER";
+over.classList.add("words");
+title.append(game);
+title.append(over);
 
 const scoreBoard = document.createElement("p");
 scoreBoard.id = "score";
