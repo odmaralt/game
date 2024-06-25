@@ -26,7 +26,7 @@ retry.innerText = "Retry";
 div.append(retry);
 const home = document.createElement("a");
 home.id = "home";
-home.innerText = "Return to Home";
+home.innerText = "Home";
 div.append(home);
 
 document.addEventListener("keypress", async (e) => {

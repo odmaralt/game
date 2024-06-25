@@ -1,11 +1,15 @@
 const box = document.getElementById("box");
+const mainContainer = document.getElementById("mainContainer");
 const back = document.createElement("a");
 back.href = "../index.html";
 box.append(back);
 const img = document.createElement("img");
 img.id = "img";
 img.src = "https://img.icons8.com/ios-filled/50/undefined/left2.png";
-back.append(img);
+img.addEventListener("click", function (e) {
+  window.location.href = "../index.html";
+});
+mainContainer.append(img);
 const gameMode = document.createElement("div");
 gameMode.id = "gameMode";
 gameMode.innerText = "Select game mode: ";
@@ -46,27 +50,21 @@ const hard = document.createElement("a");
 hard.id = "hard";
 hard.href = "../HardMode/hard.html";
 hard.innerText = "Hard";
-boxThree.append(hard);
-const previousScore = JSON.parse(localStorage.getItem("previousScore"));
-normal.addEventListener("click", () => {
-  numberOfLives = 3;
-  localStorage.setItem("numberOfLives", JSON.stringify(numberOfLives));
-  localStorage.removeItem("previousScore");
-});
-easy.addEventListener("click", () => {
-  numberOfLives = 3;
-  localStorage.setItem("numberOfLives", JSON.stringify(numberOfLives));
-  localStorage.removeItem("previousScore");
-});
-hard.addEventListener("click", () => {
-  numberOfLives = 3;
-  localStorage.setItem("numberOfLives", JSON.stringify(numberOfLives));
-  localStorage.removeItem("previousScore");
-});
-localStorage.getItem("playerName");
-let audio = new Audio(
+boxThree.append(hard); // Constants for game mode URLs
+const easyURL = "../EasyMode/easy.html";
+const normalURL = "../gamePage/game.html";
+const hardURL = "../HardMode/hard.html";
+
+// Game mode elements
+const easy1 = document.getElementById("easy");
+const normal1 = document.getElementById("normal");
+const hard1 = document.getElementById("hard");
+
+// Audio element
+const audio = new Audio(
   "http://codeskulptor-demos.commondatastorage.googleapis.com/pang/pop.mp3"
 );
+
 document.addEventListener("keydown", function (e) {
   if (
     38 == e.keyCode &&
@@ -104,6 +102,43 @@ document.addEventListener("keydown", function (e) {
     arrow1.style.display = "none";
     arrow2.style.display = "flex";
   }
+});
+
+// Handle Enter key press for selection
+// document.addEventListener("keypress", (e) => {
+//   if (e.key === "Enter") {
+//     if (arrow1.style.display === "flex") {
+//       easy.click();
+//     } else if (arrow2.style.display === "flex") {
+//       normal.click();
+//     } else if (arrow3.style.display === "flex") {
+//       hard.click();
+//     }
+//   }
+// });
+
+// Handle mode selection click events
+easy1.addEventListener("click", () => {
+  localStorage.setItem("numberOfLives", JSON.stringify(3));
+  localStorage.removeItem("previousScore");
+  localStorage.setItem("gameMode", "easy");
+
+  window.location.href = easyURL;
+});
+
+normal1.addEventListener("click", () => {
+  localStorage.setItem("numberOfLives", JSON.stringify(3));
+  localStorage.removeItem("previousScore");
+  localStorage.setItem("gameMode", "normal");
+
+  window.location.href = normalURL;
+});
+
+hard1.addEventListener("click", () => {
+  localStorage.setItem("numberOfLives", JSON.stringify(3));
+  localStorage.setItem("gameMode", "hard");
+  localStorage.removeItem("previousScore");
+  window.location.href = hardURL;
 });
 document.addEventListener("keypress", (e) => {
   if (arrow1.style.display !== "none") {

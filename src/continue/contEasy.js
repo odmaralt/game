@@ -22,7 +22,7 @@ div.append(retry);
 const home = document.createElement("a");
 home.id = "home";
 home.href = "../index.html";
-home.innerText = "Return to Home";
+home.innerText = "Home";
 div.append(home);
 document.addEventListener("keypress", (e) => {
   if (e.key === "Enter") {

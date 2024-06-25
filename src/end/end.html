@@ -60,33 +60,30 @@
       const db = getFirestore(app);
 
       const playerCollectionRef = collection(db, "players");
-
-      retry.addEventListener("click", async (numberOfLives) => {
+      retry.addEventListener("click", async () => {
         await setDoc(doc(playerCollectionRef), {
           name: playerName,
-          score: score,
+          score: score, // Reset the score to 0
           date: today,
-          mode: "Normal",
+          mode: localStorage.getItem("gameMode"), // Set the game mode
         })
           .then(() => {
-            numberOfLives = 3;
-            console.log("success");
-            localStorage.removeItem("previousScore");
-            localStorage.setItem(
-              "numberOfLives",
-              JSON.stringify(numberOfLives)
-            );
+            localStorage.setItem("numberOfLives", 3);
+            localStorage.setItem("previousScore", "0"); // Reset the score to 0
+            localStorage.setItem("score", 0); // Reset the score to 0
             window.location.href = "../gamePage/game.html";
           })
           .catch((err) => console.log(err));
       });
+      const gameMode1 = localStorage.getItem("gameMode"); // Get the game mode
 
       home.addEventListener("click", async (numberOfLives) => {
+        console.log(score, today);
         await setDoc(doc(playerCollectionRef), {
           name: playerName,
           score: score,
           date: today,
-          mode: "Normal",
+          mode: gameMode1,
         })
           .then(() => {
             numberOfLives = 3;
@@ -102,7 +99,7 @@
     </script>
     <script>
       anime
-        .timeline({ loop: true })
+        .timeline({ loop: false })
         .add({
           targets: "#title .words",
           scale: [14, 1],

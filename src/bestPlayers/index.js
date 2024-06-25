@@ -46,7 +46,7 @@ const allNames = document.createElement("div");
 allNames.id = "allNames";
 all.append(allNames);
 const allScores = document.createElement("div");
-allScores.id = "allNames";
+allScores.id = "allScores";
 all.append(allScores);
 const allModes = document.createElement("div");
 allModes.id = "allModes";
@@ -68,6 +68,3 @@ all.append(allDates);
 // const date1 = document.createElement("p")
 // date1.id="date1"
 // allPlayers.append(date1)
-let backgroundAudio = new Audio("../../Bicycle.mp3");
-backgroundAudio.loop = true;
-backgroundAudio.play();

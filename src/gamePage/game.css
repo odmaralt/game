@@ -3,12 +3,24 @@
   padding: 0;
 }
 body {
-  background-color: #9dc7ff;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.37), rgba(0, 0, 0, 0.3)),
+  url(https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2942&q=80);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0px;
+  padding: 0px;
+}
+#container {
+  height: 86vh;
+  margin: 0px;
+  padding: 0px;
+  width: 100vw;
 }
 #scoreDiv {
   float: right;
   margin-right: 2%;
   font-size: 25px;
+  color: white;
   padding: 14px;
   font-family: "Press Start 2P", cursive;
 }
@@ -22,7 +34,7 @@ body {
 .heart {
   height: 60px;
   width: 60px;
-  margin-left: -10px;
+  margin-left: 0px;
   display: initial;
 }
 #bothDivs {

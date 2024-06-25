@@ -25,6 +25,12 @@
       href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div id="boxes"></div>
@@ -57,7 +63,6 @@
         const player = doc.data();
         players.push(player);
       });
-
       players
         .sort((a, b) => parseFloat(b.score) - parseFloat(a.score))
         .map((player) => {
@@ -66,7 +71,6 @@
           play = play.slice(0, -1);
           play = play.slice(1);
           nameParagraph.textContent = play;
-
           nameParagraph.style.paddingBottom = "30px";
           allNames.append(nameParagraph);
           const scoreParagraph = document.createElement("p");
@@ -84,7 +88,8 @@
           dateParagraph.style.paddingBottom = "30px";
 
           allDates.append(dateParagraph);
-        });
+        });      console.log(players);
+
     </script>
   </body>
 </html>

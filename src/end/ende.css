@@ -1,89 +1,92 @@
 * {
-    margin: 0;
-    padding: 0;
-  }
-  body {
-    background-color: #000000;
-  }
-  
-  #box {
-    background-color: #000000;
-    justify-content: center;
-    display: block;
-    align-items: center;
-    /* border: 2px solid rgb(93, 153, 188); */
-    margin: 12% 25% 0% 25%;
-  }
-  
-  #title {
-    text-align: center;
-    padding-top: 25%;
-    padding-bottom: 6%;
-    font-size: 50px;
-    font-family: "Press Start 2P", cursive;
-    font-weight: 400;
-    color: white;
-    letter-spacing: -1px;
-    text-transform: uppercase;
-  }
-  
-  #div {
-    display: flex;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-  }
-  #score {
-    font-family: "Press Start 2P", cursive;
-    text-align: center;
-    position: relative;
-    top: -5px;
-    width: 100%;
-    display: block;
-    font-size: 17px;
-    padding-bottom: 10%;
-    color: rgb(255, 255, 255);
-  }
-  
-  #home {
-    display: flex;
-    margin-bottom: 100px;
-    color: #ffffff;
-    font-family: "Press Start 2P", cursive;
-    font-size: 22px;
-    padding-top: 10px;
-    justify-content: center;
-    text-decoration: none;
-    margin-left: 10%;
-    text-transform: uppercase;
-  }
-  
-  #button:hover {
-    font-size: 17px;
-  }
-  #home:hover {
-    color: #bebebe;
-  }
-  #retry:hover {
-    color: #bebebe;
-  }
-  #title .words {
-    display: inline-block;
-    line-height: 1em;
-    padding-left: 25px;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+  url(https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2942&q=80);
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+}
 
-  }
-  #retry {
-    display: flex;
-    margin-bottom: 100px;
-    color: #ffffff;
-    font-family: "Press Start 2P", cursive;
-    font-size: 22px;
-    padding-top: 10px;
-    justify-content: center;
-    margin-right: 4%;
-    margin-left: 12%;
-    text-decoration: none;
-    text-transform: uppercase;
-  }
-  
+#title {
+  text-align: center;
+  padding-top: 25%;
+  padding-bottom: 6%;
+  font-size: 50px;
+  font-family: "Press Start 2P", cursive;
+  font-weight: 400;
+  color: white;
+  text-shadow: #bebebf 2px 3px;
+
+  letter-spacing: -1px;
+  text-transform: uppercase;
+}
+
+#div {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+#score {
+  font-family: "Press Start 2P", cursive;
+  text-align: center;
+  position: relative;
+  text-shadow: #bebebf 2px 3px;
+
+  top: -5px;
+  width: 100%;
+  display: block;
+  font-size: 17px;
+  padding-bottom: 10%;
+  color: rgb(255, 255, 255);
+}
+
+#home {
+  display: flex;
+  margin-bottom: 100px;
+  color: #ffffff;
+  font-family: "Press Start 2P", cursive;
+  font-size: 22px;
+  padding-top: 10px;
+  justify-content: center;
+  text-decoration: none;
+  text-shadow: #bebebf 2px 3px;
+
+  margin-left: 10%;
+  text-transform: uppercase;
+}
+
+#button:hover {
+  font-size: 17px;
+}
+#home:hover {
+  color: #bebebe;
+}
+#retry:hover {
+  color: #bebebe;
+}
+#title .words {
+  display: inline-block;
+  line-height: 1em;
+  padding-left: 25px;
+}
+#retry {
+  display: flex;
+  margin-bottom: 100px;
+  color: #ffffff;
+  font-family: "Press Start 2P", cursive;
+  font-size: 22px;
+  padding-top: 10px;
+  justify-content: center;
+  text-shadow: #bebebf 2px 3px;
+
+  margin-right: 4%;
+  text-decoration: none;
+  text-transform: uppercase;
+}

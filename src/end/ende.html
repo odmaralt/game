@@ -63,28 +63,27 @@
       retry.addEventListener("click", async (numberOfLives) => {
         await setDoc(doc(playerCollectionRef), {
           name: playerName,
-          score: score,
+          score: score, // Reset the score to 0
           date: today,
-          mode: "Easy",
+          mode: localStorage.getItem("gameMode"), // Set the game mode
         })
           .then(() => {
-            numberOfLives = 3;
-            localStorage.setItem(
-              "numberOfLives",
-              JSON.stringify(numberOfLives)
-            );
-            localStorage.removeItem("previousScore");
+            localStorage.setItem("numberOfLives", 3);
+            localStorage.setItem("previousScore", "0"); // Reset the score to 0
+            localStorage.setItem("score", 0); // Reset the score to 0
             window.location.href = "../EasyMode/easy.html";
           })
           .catch((err) => console.log(err));
       });
+      const gameMode1 = localStorage.getItem("gameMode"); // Get the game mode
 
       home.addEventListener("click", async (numberOfLives) => {
+        console.log(gameMode1);
         await setDoc(doc(playerCollectionRef), {
           name: playerName,
           score: score,
           date: today,
-          mode: "Easy",
+          mode: gameMode1,
         })
           .then(() => {
             numberOfLives = 3;
@@ -93,6 +92,7 @@
               JSON.stringify(numberOfLives)
             );
             localStorage.removeItem("previousScore");
+            localStorage.removeItem("gameMode");
             window.location.href = "../index.html";
           })
           .catch((err) => console.log(err));
@@ -100,7 +100,7 @@
     </script>
     <script>
       anime
-        .timeline({ loop: true })
+        .timeline({ loop: false })
         .add({
           targets: "#title .words",
           scale: [14, 1],

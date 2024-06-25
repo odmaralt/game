@@ -1,72 +1,78 @@
 * {
-    margin: 0;
-    padding: 0;
-  }
-  body {
-    background-color: #478eda;
-  }
-  
-  #box {
-    background-color: #478eda;
-    justify-content: center;
-    display: block;
-    align-items: center;
-    margin: 10% 25% 0% 25%;
-  }
-  
-  #title {
-    text-align: center;
-    padding-top: 28%;
-    padding-bottom: 6%;
-    font-size: 52px;
-    font-family: "Press Start 2P", cursive;
-    font-weight: 400;
-    color: white;
-    letter-spacing: -1px;
-    text-transform: uppercase;
-  }
-  
-  #div {
-    display: flex;
-    text-align: center;
-    align-items: center;
-    justify-content: space-evenly;
-  }
-  #score {
-    font-family: "Press Start 2P", cursive;
-    text-align: center;
-    position: relative;
-    top: -5px;
-    width: 100%;
-    display: block;
-    font-size: 20px;
-    padding-bottom: 12%;
-    color: rgb(255, 255, 255);
-  }
-  
-  #home {
-    color: #ffffff;
-    font-family: "Press Start 2P", cursive;
-    font-size: 25px;
-    text-decoration: none;
-    text-transform: uppercase;
-  }
-  
-  #button:hover {
-    font-size: 19px;
-  }
-  #home:hover {
-    color: #181818;
-  }
-  #retry:hover {
-    color: #181818;
-  }
-  
-  #retry {
-    color: #ffffff;
-    font-family: "Press Start 2P", cursive;
-    font-size: 25px;
-    text-decoration: none;
-    text-transform: uppercase;
-  }
-  
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.36), rgba(0, 0, 0, 0.39)),
+  url(https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2942&q=80);
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+}
+
+#title {
+  text-align: center;
+  padding-top: 5%;
+  padding-bottom: 6%;
+  font-size: 52px;
+  font-family: "Press Start 2P", cursive;
+  font-weight: 400;
+  color: white;
+  text-shadow: #bebebf 2px 3px;
+
+  letter-spacing: -1px;
+  text-transform: uppercase;
+}
+
+#div {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: space-evenly;
+}
+#score {
+  font-family: "Press Start 2P", cursive;
+  text-align: center;
+  position: relative;
+  top: -5px;
+  text-shadow: #bebebf 2px 3px;
+
+  width: 100%;
+  display: block;
+  font-size: 20px;
+  padding-bottom: 12%;
+  color: rgb(255, 255, 255);
+}
+
+#home {
+  color: #ffffff;
+  font-family: "Press Start 2P", cursive;
+  font-size: 25px;
+  text-shadow: #bebebf 2px 3px;
+
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+#button:hover {
+  font-size: 19px;
+}
+#home:hover {
+  color: #cad0d9;
+}
+#retry:hover {
+  color: #cad0d9;
+}
+
+#retry {
+  color: #ffffff;
+  font-family: "Press Start 2P", cursive;
+  font-size: 25px;
+  text-decoration: none;
+  text-shadow: #bebebf 2px 3px;
+
+  text-transform: uppercase;
+}

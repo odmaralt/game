@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hover</title>
+    <title>Astrofloat</title>
     <link rel="stylesheet" href="game.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,11 +17,6 @@
     <div id="header"></div>
     <canvas width="1415px" height="720px" id="container"></canvas>
     <script>
-      const backgroundAudio = new Audio(
-        "../../Pixelland.mp3"
-      );
-      backgroundAudio.loop = true;
-      backgroundAudio.play();
       const heartArray = localStorage.getItem("numberOfLives");
       const previousScore = JSON.parse(localStorage.getItem("previousScore"));
       let score = previousScore || 0;
@@ -37,7 +32,7 @@
       for (let index = 0; index < heartArray; index++) {
         const heart1 = document.createElement("img");
         heart1.classList.add("heart");
-        heart1.src = "https://data.whicdn.com/images/138547234/original.png";
+        heart1.src = "../heartt.png";
         heartsDiv.append(heart1);
       }
 
@@ -57,7 +52,7 @@
         "Use left and right arrow keys to move.   Don't touch the obstacles!";
       setTimeout(() => {
         words.style.display = "none";
-      }, 4000);
+      }, 6000);
       instructions.append(words);
       const jumpTo = (numberOfLives) => {
         numberOfLives--;
@@ -211,7 +206,7 @@
         }
 
         // draw platforms
-        context.fillStyle = "black";
+        context.fillStyle = "white";
         platforms.forEach(function (platform) {
           context.fillRect(
             platform.x,
@@ -249,7 +244,6 @@
         });
 
         // draw doodle
-        context.fillStyle = "blue";
         context.fillRect(doodle.x, doodle.y, doodle.width, doodle.height);
 
         prevDoodleY = doodle.y;
@@ -306,7 +300,5 @@
       const app = initializeApp(firebaseConfig);
       const analytics = getAnalytics(app);
     </script>
-
-    <script src="game.js"></script>
   </body>
 </html>

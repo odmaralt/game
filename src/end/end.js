@@ -1,6 +1,4 @@
 const box = document.getElementById("box");
-const numberOfLives = localStorage.getItem("numberOfLives");
-const previousScore = JSON.parse(localStorage.getItem("previousScore"));
 const title = document.createElement("h1");
 title.id = "title";
 box.append(title);
@@ -27,7 +25,7 @@ retry.innerText = "Retry";
 div.append(retry);
 const home = document.createElement("a");
 home.id = "home";
-home.innerText = "Return to Home";
+home.innerText = "Home";
 div.append(home);
 
 document.addEventListener("keypress", async (e) => {
@@ -36,13 +34,20 @@ document.addEventListener("keypress", async (e) => {
     await retry.click();
   }
 });
+
 let today = new Date();
 let dd = String(today.getDate()).padStart(2, "0");
 let mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
 let yyyy = today.getFullYear();
 today = mm + "/" + dd + "/" + yyyy;
-const score = localStorage.getItem("score");
-if (score !== null) {
-  scoreBoard.textContent = "Score:" + score;
+
+// Initialize the score to 0 if it doesn't exist in local storage
+if (localStorage.getItem("score") === null) {
+  localStorage.setItem("score", "0");
 }
+
+// Get the player's score
+const score = localStorage.getItem("score");
+scoreBoard.textContent = "Score: " + score;
+
 const playerName = localStorage.getItem("playerName");

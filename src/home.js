@@ -1,7 +1,9 @@
+
+
 const box = document.getElementById("box");
 const title = document.createElement("h1");
 title.id = "title";
-title.innerText = "Hover";
+title.innerText = "ASTROFLOAT";
 box.append(title);
 
 const input = document.createElement("input");
@@ -58,6 +60,3 @@ buttonLink.addEventListener("click", () => {
   const playerName = input.value;
   localStorage.setItem("playerName", JSON.stringify(playerName));
 });
-let backgroundAudio = new Audio("../Bicycle.mp3");
-backgroundAudio.loop = true;
-backgroundAudio.play();

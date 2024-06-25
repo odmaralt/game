@@ -2,36 +2,31 @@
   margin: 0;
   padding: 0;
 }
-body {
-  background-color: #a6d1ff;
-  background-image: url(https://media4.giphy.com/media/HQp9pMIlKV6zQiBlBi/giphy.gif?cid=6c09b9523qwubf9xua41pdubjewywu6j91m0e3ovb0n15kf0&rid=giphy.gif&ct=s);
+#mainContainer {
+  background-color: #111a38;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
-}
-
-#box {
-  background-color: white;
-  justify-content: center;
-  display: block;
+  display: flex;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url(https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2942&q=80);
   align-items: center;
-  border: 2px solid rgb(111, 176, 251);
-  margin: 15% 25% 0% 25%;
-  height: 52vh;
+  height: 100vh;
+  justify-content: center;
 }
-
 #both {
   display: flex;
+  align-items: center;
   justify-content: space-evenly;
 }
 #title {
   text-align: center;
   padding-top: 18%;
   padding-bottom: 7%;
-  font-size: 47px;
+  font-size: 58px;
   font-family: "Press Start 2P", cursive;
   letter-spacing: -2px;
-  color: #478eda;
+  color: #ffffff;
+  text-shadow: #bebebf 2px 3px;
   font-weight: 500;
 }
 #name {
@@ -39,12 +34,14 @@ body {
   justify-content: center;
   margin: 0 auto;
   border-style: none;
-  border-bottom: 1px solid #d1d1d1;
   outline: none;
   height: 25px;
-  font-size: 13px;
+  font-size: 15px;
   width: 180px;
+  color: white;
+  margin-top: 20px;
   font-family: "Press Start 2P", cursive;
+  background-color: transparent;
 }
 #name:focus + label > span,
 #name:valid + label > span {
@@ -53,7 +50,8 @@ body {
   position: relative;
   top: -28px;
   font-size: 11px;
-  color: #478eda;
+  color: #ffffff;
+  text-shadow: #bebebf 2px 3px;
 }
 
 .inputs {
@@ -76,7 +74,7 @@ body {
   width: 100%;
   display: block;
   margin-bottom: 5%;
-  color: rgb(0, 0, 0);
+  color: white;
 }
 
 #button {
@@ -91,11 +89,12 @@ body {
   font-size: 19px;
   text-decoration: none;
   text-transform: uppercase;
-  color: #478eda;
+  color: #ffffff;
+  text-shadow: #bebebf 2px 3px;
   margin-left: 6%;
 }
 #button:hover {
-  color: #000000;
+  color: #cad0d9;
 }
 #bestPlayers {
   text-align: center;
@@ -103,24 +102,36 @@ body {
   justify-content: center;
   font-family: "Press Start 2P", cursive;
   text-decoration: none;
-  color: #478eda;
+  color: #ffffff;
+  text-shadow: #bebebf 2px 3px;
   font-size: 19px;
   text-transform: uppercase;
+  line-height: 30px;
   letter-spacing: -0.1px;
 }
 #bestPlayers:hover {
-  color: #000000;
+  color: #cad0d9;
 }
 #infoOne {
   font-family: "Press Start 2P", cursive;
-  font-size: 12px;
+  font-size: 16px;
   letter-spacing: -0.6px;
 }
 #div {
   display: flex;
 }
+#errorMessage {
+  display: none;
+}
 @media only screen and (max-width: 850px) {
-  body {
+  #box {
     display: none;
+  }
+  #errorMessage {
+    display: flex;
+  }
+  body {
+    background-color: white;
+    background-image: none;
   }
 }
